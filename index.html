@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>My Website</title>
+	<script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+ <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title" style="text-align:center">My Website</h1>
+        <nav class="header__nav">
+          <ul>
+            <li><a class="tablinks active" onclick="openTab(event, 'home')" style="display:flex;" href="#">Home</a></li>
+            <li><a class="tablinks" onclick="openTab(event, 'about')" style="display:flex;" href="#">About</a></li>
+            <li><a class="tablinks" onclick="openTab(event, 'services');" style="display:flex;" href="#">Projects</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section id="home" class="tabcontent" style="display:block;">
+          <h2 class="section__title">Welcome to my website</h2>
+          <div class="section__content">
+            <p class="section__text">This is the home page of my website.</p>
+          </div>
+        </section>
+
+        <section id="about" class="tabcontent" style="display:none">
+          <h2 class="section__title">About Me</h2>
+          <div class="section__content">
+            <img src="https://picsum.photos/200/200" alt="Placeholder Image" class="section__image">
+            <p class="section__text">Hi, my name is [Your Name] and I am a [Your Profession]. Welcome to my website!</p>
+          </div>
+        </section>
+
+        <section id="services" class="tabcontent" style="display:none">
+          <h2 class="section__title">My Services</h2>
+          <ul class="section__list">
+            <li class="section__list-item">Service 1</li>
+            <li class="section__list-item">Service 2</li>
+            <li class="section__list-item">Service 3</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__text">&copy; 2023 My Website</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
+</html>
